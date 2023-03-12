@@ -22,11 +22,6 @@ namespace M120Projekt
         public Record()
         {
             InitializeComponent();
-
-            StackPanel panel = new StackPanel();
-            this.AddChild(panel);
-            TextBox txtOben = new TextBox();
-            panel.Children.Add(txtOben);
         }
     }
 }

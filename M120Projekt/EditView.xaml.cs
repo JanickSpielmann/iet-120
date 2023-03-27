@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,18 +11,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace M120Projekt
 {
     /// <summary>
-    /// Interaktionslogik für Window2.xaml
+    /// Interaktionslogik für EditView.xaml
     /// </summary>
-    public partial class Window2 : Window
+    public partial class EditView : UserControl
     {
-        public Window2()
+        public EditView()
         {
             InitializeComponent();
+
         }
     }
 }

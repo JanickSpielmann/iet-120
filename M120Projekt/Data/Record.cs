@@ -21,6 +21,7 @@ namespace M120Projekt.Data
         public DateTime ReleaseDate { get; set; }
         [Required]
         public Boolean Own { get; set; }
+
         #endregion
         #region Applikationsschicht
         public Record() { }
@@ -36,28 +37,28 @@ namespace M120Projekt.Data
         {
             using (var db = new Context())
             {
-                return (from record in db.KlasseA select record).ToList();
+                return (from record in db.Record select record).ToList();
             }
         }
         public static Record LesenID(Int64 klasseAId)
         {
             using (var db = new Context())
             {
-                return (from record in db.KlasseA where record.RecordId == klasseAId select record).FirstOrDefault();
+                return (from record in db.Record where record.RecordId == klasseAId select record).FirstOrDefault();
             }
         }
         public static List<Record> LesenAttributGleich(String suchbegriff)
         {
             using (var db = new Context())
             {
-                return (from record in db.KlasseA where record.AlbumTitle == suchbegriff select record).ToList();
+                return (from record in db.Record where record.AlbumTitle == suchbegriff select record).ToList();
             }
         }
         public static List<Record> LesenAttributWie(String suchbegriff)
         {
             using (var db = new Context())
             {
-                return (from record in db.KlasseA where record.AlbumTitle.Contains(suchbegriff) select record).ToList();
+                return (from record in db.Record where record.AlbumTitle.Contains(suchbegriff) select record).ToList();
             }
         }
         public Int64 Erstellen()
@@ -66,7 +67,7 @@ namespace M120Projekt.Data
             if (this.ReleaseDate == null) this.ReleaseDate = DateTime.MinValue;
             using (var db = new Context())
             {
-                db.KlasseA.Add(this);
+                db.Record.Add(this);
                 db.SaveChanges();
                 return this.RecordId;
             }

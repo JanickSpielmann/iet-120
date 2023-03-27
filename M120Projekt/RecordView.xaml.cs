@@ -10,18 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace M120Projekt
 {
     /// <summary>
-    /// Interaktionslogik für Window1.xaml
+    /// Interaktionslogik für RecordView.xaml
     /// </summary>
-    public partial class Record : Window
+    public partial class RecordView : UserControl
     {
-        public Record()
+        public RecordView()
         {
             InitializeComponent();
+        }
+
+        private void txtAlbumTitle_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

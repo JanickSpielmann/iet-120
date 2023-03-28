@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:M120Projekt"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="800">
-    <Grid>
-        <local:ListView></local:ListView>
+    <Grid x:Name="mainGrid">
     </Grid>
 </Window>

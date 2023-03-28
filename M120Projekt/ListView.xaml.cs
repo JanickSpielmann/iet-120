@@ -1,4 +1,5 @@
-﻿using System;
+﻿using M120Projekt.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +21,37 @@ namespace M120Projekt
     /// </summary>
     public partial class ListView : UserControl
     {
-        public ListView()
+        private MainWindow mainWindow;
+        public ListView(MainWindow mainWindow)
         {
+            this.mainWindow = mainWindow;
             InitializeComponent();
             dgrRecord.ItemsSource = Data.Record.ReadTable();
         }
-
+        private void btnCreat_DoubleClick(object sender, RoutedEventArgs e)
+        {
+            btnCreate_Click(sender,e);
+        }
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
+            mainWindow.OpenEditView();
 
+        }
+        private void Record_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (dgrRecord.SelectedItem != null)
+            {
+                Record selectedRecord = (Record)dgrRecord.SelectedItem;
+                mainWindow.OpenRecordView(selectedRecord.RecordId);
+            }
+        }
+        private void btnExit_DoubleClick(object sender, RoutedEventArgs e)
+        {
+            btnExit_Click(sender, e);
+        }
+            private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Close();
         }
     }
 }

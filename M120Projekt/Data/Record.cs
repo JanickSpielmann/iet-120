@@ -16,6 +16,8 @@ namespace M120Projekt.Data
         [Required]        
         public String Artist { get; set; }
         [Required]
+        public String Genre { get; set; }
+        [Required]
         public Double Price { get; set; }
         [Required]
         public DateTime ReleaseDate { get; set; }
@@ -39,11 +41,11 @@ namespace M120Projekt.Data
                 return (from record in db.Records select record).ToList();
             }
         }
-        public static Record LesenID(Int64 klasseAId)
+        public static Record ReadID(Int64 RecordId)
         {
             using (var db = new Context())
             {
-                return (from record in db.Records where record.RecordId == klasseAId select record).FirstOrDefault();
+                return (from record in db.Records where record.RecordId == RecordId select record).FirstOrDefault();
             }
         }
         public static List<Record> LesenAttributGleich(String suchbegriff)

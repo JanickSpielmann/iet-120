@@ -9,12 +9,12 @@
              d:DesignHeight="400" d:DesignWidth="800">
     <DockPanel>
         <Grid DockPanel.Dock="Top">
-            <DataGrid x:Name="dgrRecord" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="10">
+            <DataGrid x:Name="dgrRecord" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="10" MouseDoubleClick="Record_MouseDoubleClick">
                 <DataGrid.Columns>
-                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Title}" Header="Title" Width="auto"/>
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding AlbumTitle}" Header="Title" Width="auto"/>
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Artist}" Header="Artist" Width="auto"/>
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Genre}" Header="Genre" Width="auto"/>
-                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Price}" Header="Price" Width="auto"/>
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Price}" Header="Price" Width="auto"/>
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Release_Date}" Header="Release Date" Width="auto"/>
                 <DataGridCheckBoxColumn IsReadOnly="True" Binding="{Binding Own}" Header="Own" Width="auto"/>
                 </DataGrid.Columns>
@@ -37,7 +37,7 @@
             </Grid.RowDefinitions>
 
             <Button x:Name="btnCreate" Grid.Column="3" Grid.Row="0" Content="Create Entry" Click="btnCreate_Click"/>
-            <Button x:Name="btnExit" Grid.Column="5" Grid.Row="0" Content="Exit Program"/>
+            <Button x:Name="btnExit" Grid.Column="5" Grid.Row="0" Content="Exit Program" Click="btnExit_Click"/>
         </Grid> 
     </DockPanel>
     

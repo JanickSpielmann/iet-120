@@ -14,6 +14,7 @@ namespace M120Projekt
             Record1.AlbumTitle = "Nevermind";
             Record1.Artist = "Nirvana";
             Record1.Price = 24.90;
+            Record1.Genre = "Grung";
             Record1.Own = true;
             Record1.ReleaseDate = new DateTime(1991, 9, 24);
             Int64 AlbumId = Record1.Erstellen();
@@ -26,6 +27,7 @@ namespace M120Projekt
             Record2.AlbumTitle = "Back In Black";
             Record2.Artist = "ACDC";
             Record2.Price = 29.90;
+            Record2.Genre = "Rock";
             Record2.Own = false;
             Record2.ReleaseDate = new DateTime(1980, 7, 25);
             Int64 AlbumId = Record2.Erstellen();
@@ -37,7 +39,8 @@ namespace M120Projekt
         {
             Debug.Print("--- DemoARead ---");
             // Demo liest alle
-            foreach (Data.Record RecordA in Data.Record.LesenAlle())
+            foreach (Data.Record RecordA in Data.Record.ReadTable())
+
             {
                 Debug.Print("Artikel Id:" + RecordA.RecordId + " Name:" + RecordA.AlbumTitle);
             }
@@ -47,7 +50,7 @@ namespace M120Projekt
         {
             Debug.Print("--- DemoAUpdate ---");
             // Records ändert Attribute
-            Data.Record RecordA = Data.Record.LesenID(1);
+            Data.Record RecordA = Data.Record.ReadID(1);
             RecordA.AlbumTitle = "Artikel 1 nach Update";
             RecordA.Aktualisieren();
         }
@@ -55,7 +58,7 @@ namespace M120Projekt
         public static void RecordDelete()
         {
             Debug.Print("--- DemoADelete ---");
-            Data.Record.LesenID(2).Loeschen();
+            Data.Record.ReadID(2).Loeschen();
             Debug.Print("Artikel mit Id 2 gelöscht");
         }
         #endregion

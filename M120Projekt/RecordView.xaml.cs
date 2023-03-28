@@ -20,9 +20,56 @@ namespace M120Projekt
     /// </summary>
     public partial class RecordView : UserControl
     {
-        public RecordView()
+        MainWindow mainWindow;
+        Data.Record record;
+        public RecordView(MainWindow mainWindow)
         {
+            this.mainWindow = mainWindow;
             InitializeComponent();
+        }
+
+        public RecordView(MainWindow mainWindow,long id)
+        {
+            this.mainWindow = mainWindow;
+            InitializeComponent();
+            this.record = GetRecord(id);
+            FillPage(record);
+        }
+
+        private Data.Record GetRecord(long id)
+        {
+            return Data.Record.ReadID(id);
+        }
+
+        public void FillPage(Data.Record record)
+        {
+            txtAlbumTitle.Text =  record.AlbumTitle;
+            txtArtist.Text = record.Artist;
+            txtGenres.Text = record.Genre;
+            txtPrice.Text = record.Price.ToString();
+            OwnPrint(record);
+
+
+
+        }
+        public void OwnPrint(Data.Record record)
+        {
+            if (record.Own)
+            {
+                txtOwn.Background = Brushes.Green;
+            }
+            else
+            {
+                txtOwn.Background = Brushes.Red;
+            }
+        }
+        private void btnEdit_DoubleClick(object sender, RoutedEventArgs e)
+        {
+            btnEdit_Click(sender, e);
+        }
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.OpenEditView(record);
         }
     }
 }

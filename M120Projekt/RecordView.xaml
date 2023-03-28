@@ -33,11 +33,11 @@
         </Grid.RowDefinitions>
 
         <!--Album Title-->
-        <TextBox x:Name="txtAlbumTitle"  IsEnabled="false" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Album Title</TextBox>
+        <TextBox x:Name="txtAlbumTitle"  IsEnabled="false" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/> 
         <!--Artist-->
-        <TextBox x:Name="txtArtist" IsEnabled="false" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Artist</TextBox>
+        <TextBox x:Name="txtArtist" IsEnabled="false" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <!--Genre-->
-        <ComboBox x:Name="Genres" IsEnabled="false" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></ComboBox>
+        <TextBox x:Name="txtGenres" IsEnabled="false" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <!--Release Date-->
         <DatePickerTextBox x:Name="dpiReleaseDate" IsEnabled="False"  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" >Release Date</DatePickerTextBox>
         <!--Cover-->
@@ -45,12 +45,12 @@
 
         <DockPanel Grid.Row="7" Grid.Column="4"  Grid.ColumnSpan="2" >
             <!--Price-->
-            <TextBox IsEnabled="True" DockPanel.Dock="Left" Width="100" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Price</TextBox>
+            <TextBox x:Name="txtPrice" IsEnabled="True" DockPanel.Dock="Left" Width="100" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <!--Own-->
-            <TextBox IsEnabled="false" DockPanel.Dock="Right" BorderBrush="Black" Background="LightGreen"  HorizontalAlignment="Right" BorderThickness="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Width="100">Own</TextBox>
+            <TextBox x:Name="txtOwn" IsEnabled="false" DockPanel.Dock="Right" BorderBrush="Black" Background="LightGreen"  HorizontalAlignment="Right" BorderThickness="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Width="100"/>
         </DockPanel>
 
-        <Button x:Name="btnEdit" Grid.Row="9" Grid.Column="1" Content="Edit"/>
+        <Button x:Name="btnEdit" Grid.Row="9" Grid.Column="1" Content="Edit" Click="btnEdit_Click"/>
         <Button x:Name="btnReset" Grid.Row="9" Grid.Column="3" Content="Reset"/>
         <Button x:Name="btnReturn" Grid.Row="9" Grid.Column="5" Content="Return"/>
 

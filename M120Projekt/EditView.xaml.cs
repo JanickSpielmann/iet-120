@@ -34,6 +34,7 @@ namespace M120Projekt
             this.mainWindow = mainWindow;
             InitializeComponent();
             CreateGenres();
+            FillPage();
             update = false;
         }
 
@@ -53,8 +54,7 @@ namespace M120Projekt
         {
             if ((txtAlbumTitle.Text.Length > 0) && 
                 (cmbGenres.Text.Length > 0) &&
-                (dpiReleaseDate.Text.Length > 0) && 
-                (txtPrice.Text.Length > 0))
+                (dpiReleaseDate.Text.Length > 0))
             {
                 btnSave.IsEnabled = true;
             }
@@ -134,6 +134,11 @@ namespace M120Projekt
             cmbGenres.ItemsSource = genres;
         }
 
+        public void FillPage()
+        {
+            dpiReleaseDate.SelectedDate = DateTime.Now;
+            txtPrice.Text = "0.00";
+        }
         public void FillPage(Data.Record record)
         {
             txtAlbumTitle.Text = record.AlbumTitle;
@@ -221,6 +226,8 @@ namespace M120Projekt
         {
             SetStartButton();
         }
+
+
     }
 }
 

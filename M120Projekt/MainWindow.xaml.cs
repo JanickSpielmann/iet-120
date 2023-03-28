@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 
 namespace M120Projekt
 {
@@ -11,7 +10,13 @@ namespace M120Projekt
         public MainWindow()
         {
             InitializeComponent();
-
+            // Aufruf diverse APIDemo Methoden
+            APIDemo.CreateNirvana();
+            APIDemo.CreateACDC();
+            APIDemo.RecordRead();
+            APIDemo.RecordUpdate();
+            APIDemo.RecordRead();
+            APIDemo.RecordDelete();
         }
     }
 }

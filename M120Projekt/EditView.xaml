@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:M120Projekt"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800"
-             Background="White">
+             Background="white"
+             d:DesignHeight="400" d:DesignWidth="800">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -50,7 +50,7 @@
         <!--Release Date-->
         <DockPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2">
             <Label  x:Name="lblReleaseDate" DockPanel.Dock="Left" Content="Release Date" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <DatePickerTextBox x:Name="dpiReleaseDate"  Width="100" IsEnabled="True" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <DatePicker x:Name="dpiReleaseDate"  Width="100" IsEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </DockPanel>
         <!--Cover-->
         <DockPanel Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2">
@@ -62,7 +62,7 @@
             <Label x:Name="lblOwn" DockPanel.Dock="Left" Content="Own" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <CheckBox x:Name="ckbOwn" Width="100" IsEnabled="True" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
         </DockPanel>
-        <!--Price-->    
+        <!--Price-->
         <DockPanel Grid.Row="5" Grid.Column="4"  Grid.ColumnSpan="2" >
             <Label  x:Name="lblPrice" DockPanel.Dock="Left" Content="Price" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <TextBox x:Name="txtPrice" DockPanel.Dock="Right" Width="100" IsEnabled="True"  BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>

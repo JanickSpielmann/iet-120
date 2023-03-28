@@ -9,7 +9,6 @@ namespace M120Projekt
         // Create
         public static void CreateNirvana()
         {
-
             // Schallplatte 1
             Data.Record Record1 = new Data.Record();
             Record1.AlbumTitle = "Nevermind";
@@ -33,9 +32,8 @@ namespace M120Projekt
             Debug.Print("Artikel erstellt mit Id:" + AlbumId);
         }
 
-
         // Read
-        public static void DemoARead()
+        public static void RecordRead()
         {
             Debug.Print("--- DemoARead ---");
             // Demo liest alle
@@ -45,16 +43,16 @@ namespace M120Projekt
             }
         }
         // Update
-        public static void DemoAUpdate()
+        public static void RecordUpdate()
         {
             Debug.Print("--- DemoAUpdate ---");
-            // KlasseA ändert Attribute
+            // Records ändert Attribute
             Data.Record RecordA = Data.Record.LesenID(1);
             RecordA.AlbumTitle = "Artikel 1 nach Update";
             RecordA.Aktualisieren();
         }
         // Delete
-        public static void DemoADelete()
+        public static void RecordDelete()
         {
             Debug.Print("--- DemoADelete ---");
             Data.Record.LesenID(2).Loeschen();

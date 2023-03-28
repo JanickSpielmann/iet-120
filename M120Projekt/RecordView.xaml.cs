@@ -24,10 +24,5 @@ namespace M120Projekt
         {
             InitializeComponent();
         }
-
-        private void txtAlbumTitle_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

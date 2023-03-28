@@ -13,7 +13,7 @@ namespace M120Projekt.Data
         public Int64 RecordId { get; set; }
         [Required]
         public String AlbumTitle { get; set; }
-        [Required]
+        [Required]        
         public String Artist { get; set; }
         [Required]
         public Double Price { get; set; }
@@ -21,7 +21,6 @@ namespace M120Projekt.Data
         public DateTime ReleaseDate { get; set; }
         [Required]
         public Boolean Own { get; set; }
-
         #endregion
         #region Applikationsschicht
         public Record() { }
@@ -37,28 +36,28 @@ namespace M120Projekt.Data
         {
             using (var db = new Context())
             {
-                return (from record in db.Record select record).ToList();
+                return (from record in db.Records select record).ToList();
             }
         }
         public static Record LesenID(Int64 klasseAId)
         {
             using (var db = new Context())
             {
-                return (from record in db.Record where record.RecordId == klasseAId select record).FirstOrDefault();
+                return (from record in db.Records where record.RecordId == klasseAId select record).FirstOrDefault();
             }
         }
         public static List<Record> LesenAttributGleich(String suchbegriff)
         {
             using (var db = new Context())
             {
-                return (from record in db.Record where record.AlbumTitle == suchbegriff select record).ToList();
+                return (from record in db.Records where record.AlbumTitle == suchbegriff select record).ToList();
             }
         }
         public static List<Record> LesenAttributWie(String suchbegriff)
         {
             using (var db = new Context())
             {
-                return (from record in db.Record where record.AlbumTitle.Contains(suchbegriff) select record).ToList();
+                return (from record in db.Records where record.AlbumTitle.Contains(suchbegriff) select record).ToList();
             }
         }
         public Int64 Erstellen()
@@ -67,7 +66,7 @@ namespace M120Projekt.Data
             if (this.ReleaseDate == null) this.ReleaseDate = DateTime.MinValue;
             using (var db = new Context())
             {
-                db.Record.Add(this);
+                db.Records.Add(this);
                 db.SaveChanges();
                 return this.RecordId;
             }

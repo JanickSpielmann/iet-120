@@ -51,8 +51,8 @@
         </DockPanel>
 
         <Button x:Name="btnEdit" Grid.Row="9" Grid.Column="1" Content="Edit" Click="btnEdit_Click"/>
-        <Button x:Name="btnReset" Grid.Row="9" Grid.Column="3" Content="Reset"/>
-        <Button x:Name="btnReturn" Grid.Row="9" Grid.Column="5" Content="Return"/>
+        <Button x:Name="btnDelete" Grid.Row="9" Grid.Column="3" Content="Delete" Click="btnDelete_Click"/>
+        <Button x:Name="btnReturn" Grid.Row="9" Grid.Column="5" Content="Return" Click="btnReturn_Click"/>
 
     </Grid>
 </UserControl>

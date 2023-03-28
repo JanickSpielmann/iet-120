@@ -44,8 +44,8 @@
         </DockPanel>
         <!--Genre-->
         <DockPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2">
-            <Label  x:Name="lblGenres" DockPanel.Dock="Left" Content="Genres" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <ComboBox x:Name="cmbGenres" DockPanel.Dock="Right" Width="100" IsEnabled="True" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label  x:Name="lblGenres" DockPanel.Dock="Left" Content="Genre" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <ComboBox x:Name="cmbGenres" DockPanel.Dock="Right" SelectedIndex="0" ItemsSource="{Binding genres}" Width="100" IsEnabled="True" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </DockPanel>
         <!--Release Date-->
         <DockPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2">

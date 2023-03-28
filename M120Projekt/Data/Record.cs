@@ -62,7 +62,7 @@ namespace M120Projekt.Data
                 return (from record in db.Records where record.AlbumTitle.Contains(suchbegriff) select record).ToList();
             }
         }
-        public Int64 Erstellen()
+        public Int64 Create()
         {
             if (this.AlbumTitle == null || this.AlbumTitle == "") this.AlbumTitle = "leer";
             if (this.ReleaseDate == null) this.ReleaseDate = DateTime.MinValue;
@@ -73,7 +73,7 @@ namespace M120Projekt.Data
                 return this.RecordId;
             }
         }
-        public Int64 Aktualisieren()
+        public Int64 Update()
         {
             using (var db = new Context())
             {
@@ -82,7 +82,7 @@ namespace M120Projekt.Data
                 return this.RecordId;
             }
         }
-        public void Loeschen()
+        public void Delete()
         {
             using (var db = new Context())
             {

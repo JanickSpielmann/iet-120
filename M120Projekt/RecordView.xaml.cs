@@ -48,9 +48,6 @@ namespace M120Projekt
             txtGenres.Text = record.Genre;
             txtPrice.Text = record.Price.ToString();
             OwnPrint(record);
-
-
-
         }
         public void OwnPrint(Data.Record record)
         {
@@ -70,6 +67,24 @@ namespace M120Projekt
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.OpenEditView(record);
+        }
+
+        private void btnDelete_DoubleClick(object sender, RoutedEventArgs e)
+        {
+            btnDelete_Click(sender,e);
+        }
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            record.Delete();
+            mainWindow.OpenListView();
+        }
+        private void btnReturn_DoubleClick(object sender, RoutedEventArgs e)
+        {
+            btnReturn_Click(sender, e);
+        }
+        private void btnReturn_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.OpenListView();
         }
     }
 }

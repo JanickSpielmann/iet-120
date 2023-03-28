@@ -20,18 +20,30 @@ namespace M120Projekt
     /// </summary>
     public partial class EditView : UserControl
     {
-        MainWindow mainWindow;
+        private MainWindow mainWindow;
+        private bool update;
+        private Data.Record record;
+        private List<string> genres;
+
+
         public EditView(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
+            CreateGenres();
             InitializeComponent();
+            update = false;
         }
+
+  
+
         public EditView(MainWindow mainWindow, Data.Record record)
         {
+            this.record = record;
             this.mainWindow = mainWindow;
+            CreateGenres();
             InitializeComponent();
             FillPage(record);
-            
+            update = true;
         }
 
         private void btnSave_DoubleClick(object sender,RoutedEventArgs e)
@@ -40,6 +52,28 @@ namespace M120Projekt
         }
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            if (update)
+            {
+                record.AlbumTitle = txtAlbumTitle.ToString();
+                record.Artist = txtArtist.ToString();
+                record.ReleaseDate = (DateTime) dpiReleaseDate.SelectedDate;
+                record.Price = double.Parse(txtPrice.Text); ;
+                record.Own = (bool)ckbOwn.IsChecked;
+                record.Update();
+            }
+            else
+            {
+                record = new Data.Record();
+                record.AlbumTitle = txtAlbumTitle.ToString();
+                record.Artist = txtArtist.ToString();
+                record.ReleaseDate = (DateTime)dpiReleaseDate.SelectedDate;
+                record.Price = double.Parse(txtPrice.Text);
+                record.Own = (bool)ckbOwn.IsChecked;
+                record.Create();
+            }
+
+            mainWindow.OpenListView();
+
 
         }
 
@@ -50,9 +84,43 @@ namespace M120Projekt
             cmbGenres.Text = record.Genre;
             txtPrice.Text = record.Price.ToString();
             OwnPrint(record);
+        }
 
-
-
+        private void CreateGenres()
+        {
+               genres = new List<string>{ 
+           
+                "Pop",
+                "Rock",
+                "Hip hop",
+                "Electronic dance music (EDM)",
+                "Country",
+                "Jazz",
+                "Classical",
+                "R&B",
+                "Metal",
+                "Reggae",
+                "Blues",
+                "Punk",
+                "Alternative",
+                "Indie rock",
+                "Folk",
+                "World music",
+                "Funk",
+                "Soul",
+                "Gospel",
+                "Electronic",
+                "House",
+                "Techno",
+                "Dubstep",
+                "Trap",
+                "Grime",
+                "K-pop",
+                "J-pop",
+                "Latin",
+                "Afrobeat",
+                "Dancehall"
+            };
         }
         public void OwnPrint(Data.Record record)
         {

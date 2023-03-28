@@ -17,7 +17,7 @@ namespace M120Projekt
             Record1.Genre = "Grung";
             Record1.Own = true;
             Record1.ReleaseDate = new DateTime(1991, 9, 24);
-            Int64 AlbumId = Record1.Erstellen();
+            Int64 AlbumId = Record1.Create();
             Debug.Print("Artikel erstellt mit Id:" + AlbumId);
         }
         public static void CreateACDC()
@@ -30,7 +30,7 @@ namespace M120Projekt
             Record2.Genre = "Rock";
             Record2.Own = false;
             Record2.ReleaseDate = new DateTime(1980, 7, 25);
-            Int64 AlbumId = Record2.Erstellen();
+            Int64 AlbumId = Record2.Create();
             Debug.Print("Artikel erstellt mit Id:" + AlbumId);
         }
 
@@ -52,13 +52,13 @@ namespace M120Projekt
             // Records ändert Attribute
             Data.Record RecordA = Data.Record.ReadID(1);
             RecordA.AlbumTitle = "Artikel 1 nach Update";
-            RecordA.Aktualisieren();
+            RecordA.Update();
         }
         // Delete
         public static void RecordDelete()
         {
             Debug.Print("--- DemoADelete ---");
-            Data.Record.ReadID(2).Loeschen();
+            Data.Record.ReadID(2).Delete();
             Debug.Print("Artikel mit Id 2 gelöscht");
         }
         #endregion

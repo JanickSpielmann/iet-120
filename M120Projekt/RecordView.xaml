@@ -39,7 +39,7 @@
         <!--Genre-->
         <TextBox x:Name="txtGenres" IsEnabled="false" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <!--Release Date-->
-        <DatePickerTextBox x:Name="dpiReleaseDate" IsEnabled="False"  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" >Release Date</DatePickerTextBox>
+        <DatePickerTextBox x:Name="dpiReleaseDate" IsEnabled="False"  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <!--Cover-->
         <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="5" Grid.ColumnSpan="2"  Source="/Data/CD_Cover/PlaceholderCover.jpg" />
 

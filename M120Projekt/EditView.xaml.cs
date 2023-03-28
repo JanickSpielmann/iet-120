@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,29 +26,33 @@ namespace M120Projekt
         private bool update;
         private Data.Record record;
         private List<string> genres;
+        
 
+        public object DialogResult { get; private set; }
 
         public EditView(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
-            CreateGenres();
             InitializeComponent();
+            CreateGenres();
             update = false;
         }
 
-  
+
 
         public EditView(MainWindow mainWindow, Data.Record record)
         {
             this.record = record;
             this.mainWindow = mainWindow;
-            CreateGenres();
             InitializeComponent();
+            CreateGenres();
             FillPage(record);
             update = true;
         }
 
-        private void btnSave_DoubleClick(object sender,RoutedEventArgs e)
+
+
+        private void btnSave_DoubleClick(object sender, RoutedEventArgs e)
         {
             btnSave_Click(sender, e);
         }
@@ -54,9 +60,9 @@ namespace M120Projekt
         {
             if (update)
             {
-                record.AlbumTitle = txtAlbumTitle.ToString();
-                record.Artist = txtArtist.ToString();
-                record.ReleaseDate = (DateTime) dpiReleaseDate.SelectedDate;
+                record.AlbumTitle = txtAlbumTitle.Text;
+                record.Artist = txtArtist.Text;
+                record.ReleaseDate = (DateTime)dpiReleaseDate.SelectedDate;
                 record.Price = double.Parse(txtPrice.Text); ;
                 record.Own = (bool)ckbOwn.IsChecked;
                 record.Update();
@@ -64,8 +70,8 @@ namespace M120Projekt
             else
             {
                 record = new Data.Record();
-                record.AlbumTitle = txtAlbumTitle.ToString();
-                record.Artist = txtArtist.ToString();
+                record.AlbumTitle = txtAlbumTitle.Text;
+                record.Artist = txtArtist.Text;
                 record.ReleaseDate = (DateTime)dpiReleaseDate.SelectedDate;
                 record.Price = double.Parse(txtPrice.Text);
                 record.Own = (bool)ckbOwn.IsChecked;
@@ -73,54 +79,54 @@ namespace M120Projekt
             }
 
             mainWindow.OpenListView();
-
-
-        }
-
-        public void FillPage(Data.Record record)
-        { 
-            txtAlbumTitle.Text = record.AlbumTitle;
-            txtArtist.Text = record.Artist;
-            cmbGenres.Text = record.Genre;
-            txtPrice.Text = record.Price.ToString();
-            OwnPrint(record);
         }
 
         private void CreateGenres()
         {
-               genres = new List<string>{ 
-           
-                "Pop",
-                "Rock",
-                "Hip hop",
-                "Electronic dance music (EDM)",
-                "Country",
-                "Jazz",
-                "Classical",
-                "R&B",
-                "Metal",
-                "Reggae",
-                "Blues",
-                "Punk",
-                "Alternative",
-                "Indie rock",
-                "Folk",
-                "World music",
-                "Funk",
-                "Soul",
-                "Gospel",
-                "Electronic",
-                "House",
-                "Techno",
-                "Dubstep",
-                "Trap",
-                "Grime",
-                "K-pop",
-                "J-pop",
-                "Latin",
-                "Afrobeat",
-                "Dancehall"
+            genres = new List<string>{
+
+            "Pop",
+            "Rock",
+            "Hip hop",
+            "Electronic dance music",
+            "Country",
+            "Jazz",
+            "Classical",
+            "R&B",
+            "Metal",
+            "Reggae",
+            "Blues",
+            "Punk",
+            "Alternative",
+            "Indie rock",
+            "Folk",
+            "World music",
+            "Funk",
+            "Soul",
+            "Gospel",
+            "Electronic",
+            "House",
+            "Techno",
+            "Dubstep",
+            "Trap",
+            "Grime",
+            "K-pop",
+            "J-pop",
+            "Latin",
+            "Afrobeat",
+            "Dancehall"
             };
+            cmbGenres.ItemsSource = genres;
+        }
+
+        public void FillPage(Data.Record record)
+        {
+            txtAlbumTitle.Text = record.AlbumTitle;
+            txtArtist.Text = record.Artist;
+            cmbGenres.SelectedValue = record.Genre;
+            dpiReleaseDate.SelectedDate = record.ReleaseDate;
+            txtPrice.Text = record.Price.ToString();
+            OwnPrint(record);
         }
         public void OwnPrint(Data.Record record)
         {
@@ -132,6 +138,65 @@ namespace M120Projekt
             {
                 ckbOwn.IsChecked = false;
             }
+        }
+
+        private void btnReturn_DoubleClick(object sender, RoutedEventArgs e)
+        {
+            btnReturn_Click(sender, e);
+        }
+
+        private void btnReturn_Click(object sender, RoutedEventArgs e)
+        {
+            if (update)
+            {
+                mainWindow.OpenRecordView(record.RecordId);
+            }
+            else
+            {
+                mainWindow.OpenListView();
+            }
+        }
+        private void bntCover_DoubleClick(object sender, RoutedEventArgs e)
+        {
+            bntCover_Click(sender, e);
+
+
+
+
+        }
+        private void bntCover_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.bmp, *.jpg, *.jpeg, *.png)|*.bmp;*.jpg;*.jpeg;*.png";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Get the selected file's path
+                string filePath = openFileDialog.FileName;
+
+                // Read the file into a byte array
+                byte[] imageData = File.ReadAllBytes(filePath);
+            }
+        }
+
+        private void txtAlbumTitle_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            btnSave.IsEnabled = true;
+
+        }
+
+        private void txtArtist_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            btnSave.IsEnabled = true;
+        }
+
+        private void cmbGenres_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnSave.IsEnabled = true;
+        }
+
+        private void txtPrice_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            btnSave.IsEnabled = true;
         }
     }
 }

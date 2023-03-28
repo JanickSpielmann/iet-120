@@ -12,6 +12,7 @@ namespace M120Projekt
         private EditView editView;
         public MainWindow()
         {
+            API.CreateNirvana();
             InitializeComponent();
             OpenListView();
 

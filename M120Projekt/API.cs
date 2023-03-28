@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Windows.Media.Imaging;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace M120Projekt
 {

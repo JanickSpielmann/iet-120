@@ -25,8 +25,7 @@ namespace M120Projekt
         private MainWindow mainWindow;
         private bool update;
         private Data.Record record;
-        private List<string> genres;
-        
+        private List<string> genres;        
 
         public object DialogResult { get; private set; }
 
@@ -50,7 +49,21 @@ namespace M120Projekt
             update = true;
         }
 
+        private void SetStartButton()
+        {
+            if ((txtAlbumTitle.Text.Length > 0) && 
+                (cmbGenres.Text.Length > 0) &&
+                (dpiReleaseDate.Text.Length > 0) && 
+                (txtPrice.Text.Length > 0))
+            {
+                btnSave.IsEnabled = true;
+            }
+            else
+            {
+                btnSave.IsEnabled = false;
+            }
 
+        }
 
         private void btnSave_DoubleClick(object sender, RoutedEventArgs e)
         {
@@ -62,6 +75,7 @@ namespace M120Projekt
             {
                 record.AlbumTitle = txtAlbumTitle.Text;
                 record.Artist = txtArtist.Text;
+                record.Genre = cmbGenres.Text;
                 record.ReleaseDate = (DateTime)dpiReleaseDate.SelectedDate;
                 record.Price = double.Parse(txtPrice.Text); ;
                 record.Own = (bool)ckbOwn.IsChecked;
@@ -72,6 +86,7 @@ namespace M120Projekt
                 record = new Data.Record();
                 record.AlbumTitle = txtAlbumTitle.Text;
                 record.Artist = txtArtist.Text;
+                record.Genre = cmbGenres.Text;
                 record.ReleaseDate = (DateTime)dpiReleaseDate.SelectedDate;
                 record.Price = double.Parse(txtPrice.Text);
                 record.Own = (bool)ckbOwn.IsChecked;
@@ -178,25 +193,34 @@ namespace M120Projekt
             }
         }
 
-        private void txtAlbumTitle_TextChanged(object sender, TextChangedEventArgs e)
+        private void txtAlbumTitle_LostFocus(object sender, RoutedEventArgs e)
         {
-            btnSave.IsEnabled = true;
+            SetStartButton();
 
         }
 
-        private void txtArtist_TextChanged(object sender, TextChangedEventArgs e)
+        private void txtArtist_LostFocus(object sender, RoutedEventArgs e)
         {
-            btnSave.IsEnabled = true;
+
+            SetStartButton();
         }
 
-        private void cmbGenres_SelectionChanged(object sender, SelectionChangedEventArgs e)
+       
+
+        private void cmbGenres_LostFocus(object sender, RoutedEventArgs e)
         {
-            btnSave.IsEnabled = true;
+            SetStartButton();
         }
 
-        private void txtPrice_TextChanged(object sender, TextChangedEventArgs e)
+        private void dpiReleaseDate_LostFocus(object sender, RoutedEventArgs e)
         {
-            btnSave.IsEnabled = true;
+            SetStartButton();      
+        }
+
+        private void txtPrice_LostFocus(object sender, RoutedEventArgs e)
+        {
+            SetStartButton();
         }
     }
 }
+

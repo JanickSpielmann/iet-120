@@ -47,6 +47,7 @@ namespace M120Projekt
             txtArtist.Text = record.Artist;
             txtGenres.Text = record.Genre;
             txtPrice.Text = record.Price.ToString();
+            dpiReleaseDate.Text = record.ReleaseDate.ToString("dd.MM.yyyy");
             OwnPrint(record);
         }
         public void OwnPrint(Data.Record record)

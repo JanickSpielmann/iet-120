@@ -15,7 +15,7 @@
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Artist}" Header="Artist" Width="auto"/>
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Genre}" Header="Genre" Width="auto"/>
                     <DataGridTextColumn IsReadOnly="True" Binding="{Binding Price}" Header="Price" Width="auto"/>
-                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding Release_Date}" Header="Release Date" Width="auto"/>
+                    <DataGridTextColumn IsReadOnly="True" Binding="{Binding ReleaseDate, StringFormat=\{0:MM.dd.yyyy\} }" Header="Release Date" Width="auto"/>
                 <DataGridCheckBoxColumn IsReadOnly="True" Binding="{Binding Own}" Header="Own" Width="auto"/>
                 </DataGrid.Columns>
             </DataGrid>  

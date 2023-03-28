@@ -23,6 +23,12 @@ namespace M120Projekt
         public ListView()
         {
             InitializeComponent();
+            dgrRecord.ItemsSource = Data.Record.ReadTable();
+        }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

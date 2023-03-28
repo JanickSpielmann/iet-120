@@ -10,13 +10,14 @@ namespace M120Projekt
         public MainWindow()
         {
             InitializeComponent();
-            // Aufruf diverse APIDemo Methoden
-            APIDemo.CreateNirvana();
-            APIDemo.CreateACDC();
-            APIDemo.RecordRead();
-            APIDemo.RecordUpdate();
-            APIDemo.RecordRead();
-            APIDemo.RecordDelete();
+            //  Aufruf diverse APIDemo Methoden
+            //  APIDemo.CreateNirvana();
+            //  APIDemo.CreateACDC();
+            //  APIDemo.RecordRead();
+            //  APIDemo.RecordUpdate();
+            //  APIDemo.RecordRead();
+            //  APIDemo.RecordDelete();
         }
+        
     }
 }

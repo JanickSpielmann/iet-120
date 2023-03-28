@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace M120Projekt
 {
-    static class APIDemo
+    static class API
     {
         #region KlasseA
         // Create

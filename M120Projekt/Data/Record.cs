@@ -32,7 +32,7 @@ namespace M120Projekt.Data
                 return "Im Getter kann Code eingefügt werden für berechnete Attribute";
             }
         }
-        public static List<Record> LesenAlle()
+        public static List<Record> ReadTable()
         {
             using (var db = new Context())
             {

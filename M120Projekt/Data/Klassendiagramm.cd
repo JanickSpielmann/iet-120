@@ -1,10 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="M120Projekt.Data.KlasseA">
-    <Position X="2" Y="0.75" Width="4.5" />
+  <Class Name="M120Projekt.EditView" BaseTypeListCollapsed="true">
+    <Position X="6" Y="1.75" Width="5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAABAAAEAAgAAIAAAgAABEQAIAAAAQCAAEA=</HashCode>
-      <FileName>Data\KlasseA.cs</FileName>
+      <HashCode>ECBEEAAAEAAAIAAAAAAAAAADBAAiABAhQgAAAIAUAEA=</HashCode>
+      <FileName>EditView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="M120Projekt.ListView" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="1" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAECAAAAAAAAAAEAAABAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>ListView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="M120Projekt.RecordView" BaseTypeListCollapsed="true">
+    <Position X="1" Y="5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAABAEAAAAAAAAAAAAAAABAAkAAABQQACAAAAAQA=</HashCode>
+      <FileName>RecordView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="M120Projekt.Data.Record">
+    <Position X="12.25" Y="1" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIgQAIAAAEAAIAAAAACIEABEAAEQAAAAKAAAA=</HashCode>
+      <FileName>Data\Record.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

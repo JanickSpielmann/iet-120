@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -48,29 +49,32 @@ namespace M120Projekt
             CreateGenres();
             FillPage(record);
             update = true;
+            MarkGreen();
         }
+
+
 
         private void SetSaveButton()
         {
             btnSave.IsEnabled = true;
 
-            if (txtAlbumTitle.Text.Length == 0)
+            if (txtAlbumTitle.Text.Replace(" ", "").Length == 0)
             {
                 btnSave.IsEnabled = false;
             }
-            if (txtArtist.Text.Length == 0)
+            if (txtArtist.Text.Replace(" ", "").Length == 0)
             {
                 btnSave.IsEnabled = false;
             }
-            if (cmbGenres.Text.Length == 0)
+            if (cmbGenres.Text.Replace(" ", "").Length == 0)
             {
                 btnSave.IsEnabled = false;
             }
-            if (dpiReleaseDate.Text.Length == 0)
+            if (dpiReleaseDate.Text.Replace(" ", "").Length == 0)
             {
                 btnSave.IsEnabled = false;
             }
-            if (txtPrice.Text.Length == 0)
+            if (txtPrice.Text.Replace(" ", "").Length == 0)
             {
                 btnSave.IsEnabled = false;
             }
@@ -112,7 +116,7 @@ namespace M120Projekt
         private void CreateGenres()
         {
             genres = new List<string>{
-
+            "",
             "Pop",
             "Rock",
             "Hip hop",
@@ -150,7 +154,6 @@ namespace M120Projekt
         public void FillPage()
         {
             dpiReleaseDate.SelectedDate = DateTime.Now;
-            txtPrice.Text = "0.00";
         }
         public void FillPage(Data.Record record)
         {
@@ -214,6 +217,15 @@ namespace M120Projekt
         private void txtAlbumTitle_LostFocus(object sender, RoutedEventArgs e)
         {
             SetSaveButton();
+            if (txtAlbumTitle.Text.Replace(" ", "").Length > 0)
+            {
+                txtAlbumTitle.Background = Brushes.LightGreen;
+            }
+            else
+            {
+                txtAlbumTitle.Background = Brushes.White;
+                txtAlbumTitle.Text = string.Empty;
+            }
 
         }
 
@@ -221,6 +233,15 @@ namespace M120Projekt
         {
 
             SetSaveButton();
+            if (txtArtist.Text.Replace(" ", "").Length > 0)
+            {
+                txtArtist.Background = Brushes.LightGreen;
+            }
+            else
+            {
+                txtArtist.Background = Brushes.White;
+                txtArtist.Text = string.Empty;
+            }
         }
        
 
@@ -237,9 +258,25 @@ namespace M120Projekt
         private void txtPrice_LostFocus(object sender, RoutedEventArgs e)
         {
             SetSaveButton();
+
+            Regex regex = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Match match = regex.Match(txtPrice.Text);
+            if (match.Success)
+            {
+                txtPrice.Background = Brushes.LightGreen;
+            }
+            else
+            {
+                txtPrice.Background = Brushes.White;
+                txtPrice.Text = string.Empty;
+            }
         }
-
-
+        private void MarkGreen()
+        {
+            txtAlbumTitle.Background = Brushes.LightGreen;
+            txtArtist.Background= Brushes.LightGreen;
+            txtPrice.Background= Brushes.LightGreen;
+        }
     }
 }
 

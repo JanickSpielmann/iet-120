@@ -50,20 +50,33 @@ namespace M120Projekt
             update = true;
         }
 
-        private void SetStartButton()
+        private void SetSaveButton()
         {
-            if ((txtAlbumTitle.Text.Length > 0) && 
-                (cmbGenres.Text.Length > 0) &&
-                (dpiReleaseDate.Text.Length > 0))
+            btnSave.IsEnabled = true;
+
+            if (txtAlbumTitle.Text.Length == 0)
             {
-                btnSave.IsEnabled = true;
+                btnSave.IsEnabled = false;
             }
-            else
+            if (txtArtist.Text.Length == 0)
+            {
+                btnSave.IsEnabled = false;
+            }
+            if (cmbGenres.Text.Length == 0)
+            {
+                btnSave.IsEnabled = false;
+            }
+            if (dpiReleaseDate.Text.Length == 0)
+            {
+                btnSave.IsEnabled = false;
+            }
+            if (txtPrice.Text.Length == 0)
             {
                 btnSave.IsEnabled = false;
             }
 
         }
+
 
         private void btnSave_DoubleClick(object sender, RoutedEventArgs e)
         {
@@ -200,31 +213,30 @@ namespace M120Projekt
 
         private void txtAlbumTitle_LostFocus(object sender, RoutedEventArgs e)
         {
-            SetStartButton();
+            SetSaveButton();
 
         }
 
         private void txtArtist_LostFocus(object sender, RoutedEventArgs e)
         {
 
-            SetStartButton();
+            SetSaveButton();
         }
-
        
 
         private void cmbGenres_LostFocus(object sender, RoutedEventArgs e)
         {
-            SetStartButton();
+            SetSaveButton();
         }
 
         private void dpiReleaseDate_LostFocus(object sender, RoutedEventArgs e)
         {
-            SetStartButton();      
+            SetSaveButton();
         }
 
         private void txtPrice_LostFocus(object sender, RoutedEventArgs e)
         {
-            SetStartButton();
+            SetSaveButton();
         }
 
 

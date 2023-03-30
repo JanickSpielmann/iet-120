@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace M120Projekt
 {
@@ -14,17 +15,15 @@ namespace M120Projekt
         {
             InitializeComponent();
             OpenListView();
-
-            #region Demo
-            //  Aufruf diverse APIDemo Methoden
-            //  API.CreateNirvana();
-            //  API.CreateACDC();
-            //  API.RecordRead();
-            //  API.RecordUpdate();
-            //  API.RecordRead();
-            //  API.RecordDelete();
-            #endregion Demo
+            // UserGuide(); // Ready, if doubleklicking a record in the list to open it is not clear for the users
         }
+
+        private void UserGuide()
+        {
+            String userGuide = "To select a single record you can doubleklick it";
+            MessageBoxResult result = MessageBox.Show(userGuide, "User Guide", MessageBoxButton.OK);
+        }
+    
 
         public void OpenRecordView(long id)
         {

@@ -9,40 +9,34 @@
 
     
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10*"/>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="10*"/>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="10*"/>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="10*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="30"/>
-                <RowDefinition Height="20"/>
-            </Grid.RowDefinitions>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        <RowDefinition Height="10"/>
+        <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
 
-        <DataGrid x:Name="dgrRecord" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="10" CanUserAddRows="False"  AutoGenerateColumns="False" MouseDoubleClick="Record_MouseDoubleClick" SelectionMode="Extended" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-            <DataGrid.Columns>
-                <DataGridTextColumn IsReadOnly="True" Binding="{Binding AlbumTitle}" Header="Title" Width="*"/>
-                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Artist}" Header="Artist" Width="*"/>
-                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Genre}" Header="Genre" Width="*"/>
-                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Price}" Header="Price" Width="*"/>
-                <DataGridTextColumn IsReadOnly="True" Binding="{Binding ReleaseDate, StringFormat=\{0:dd.MM.yyyy\} }" Header="Release Date" Width="*"/>
-                <DataGridCheckBoxColumn IsReadOnly="True" Binding="{Binding Own}" Header="Own" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-
-
-
-        <Button x:Name="btnCreate" Grid.Column="3" Grid.Row="2" Content="Create Entry" Click="btnCreate_Click"/>
-            <Button x:Name="btnExit" Grid.Column="5" Grid.Row="2" Content="Exit Program" Click="btnExit_Click"/>
-        </Grid> 
-    
-    
-    
+        <DataGrid x:Name="dgrRecord" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" IsReadOnly="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="10" CanUserAddRows="False"  AutoGenerateColumns="False" MouseDoubleClick="Record_MouseDoubleClick" SelectionMode="Extended" VerticalScrollBarVisibility="Auto">
+        <DataGrid.Columns>
+            <DataGridTextColumn Binding="{Binding AlbumTitle}" Header="Title" Width="*"/>
+            <DataGridTextColumn Binding="{Binding Artist}" Header="Artist" Width="*"/>
+            <DataGridTextColumn Binding="{Binding Genre}" Header="Genre" Width="*"/>
+            <DataGridTextColumn Binding="{Binding Price}" Header="Price" Width="*"/>
+            <DataGridTextColumn Binding="{Binding ReleaseDate, StringFormat=\{0:dd.MM.yyyy\} }" Header="Release Date" Width="*"/>
+            <DataGridCheckBoxColumn Binding="{Binding Own}" Header="Own" Width="*"/>
+        </DataGrid.Columns>
+    </DataGrid>
+    <Button x:Name="btnCreate" Grid.Column="3" Grid.Row="2" Content="Create Entry" Click="btnCreate_Click"/>
+    <Button x:Name="btnExit" Grid.Column="5" Grid.Row="2" Content="Exit Program" Click="btnExit_Click"/>
+    </Grid> 
 </UserControl>

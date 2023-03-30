@@ -24,6 +24,7 @@ namespace M120Projekt.Data
         public DateTime ReleaseDate { get; set; }
         [Required]
         public Boolean Own { get; set; }
+        // public Byte[] Cover { get; set; }
         #endregion
         #region Applikationsschicht
         public Record() { }

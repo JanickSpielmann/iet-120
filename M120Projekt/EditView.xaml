@@ -36,41 +36,41 @@
         <!--Album Title-->
         <DockPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
             <Label  x:Name="lblAlbumTitle" DockPanel.Dock="Left" Content="Album Title" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <TextBox x:Name="txtAlbumTitle" DockPanel.Dock="Right" Width="100" IsEnabled="True"  BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" LostFocus="txtAlbumTitle_LostFocus"/>
+            <TextBox x:Name="txtAlbumTitle" TabIndex="1"  DockPanel.Dock="Right" Width="100" IsEnabled="True"  BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" LostFocus="txtAlbumTitle_LostFocus"/>
         </DockPanel>
         <!--Artist-->
         <DockPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
             <Label  x:Name="lblArtist" DockPanel.Dock="Left" Content="Artist" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <TextBox x:Name="txtArtist" DockPanel.Dock="Right" Width="100" IsEnabled="True" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" LostFocus="txtArtist_LostFocus"/>
+            <TextBox x:Name="txtArtist"  TabIndex="2" DockPanel.Dock="Right" Width="100" IsEnabled="True" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" LostFocus="txtArtist_LostFocus"/>
         </DockPanel>
         <!--Genre-->
         <DockPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2">
             <Label  x:Name="lblGenres" DockPanel.Dock="Left" Content="Genre" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <ComboBox x:Name="cmbGenres" DockPanel.Dock="Right" SelectedIndex="0" Width="100" IsEnabled="True" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" LostFocus="cmbGenres_LostFocus"/>
+            <ComboBox x:Name="cmbGenres"  TabIndex="3" DockPanel.Dock="Right" SelectedIndex="0" Width="100" IsEnabled="True" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" LostFocus="cmbGenres_LostFocus"/>
         </DockPanel>
         <!--Release Date-->
         <DockPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2">
             <Label  x:Name="lblReleaseDate" DockPanel.Dock="Left" Content="Release Date" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <DatePicker x:Name="dpiReleaseDate"  Width="100" IsEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" LostFocus="dpiReleaseDate_LostFocus"/>
+            <DatePicker x:Name="dpiReleaseDate"  TabIndex="4" Width="100" IsEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" LostFocus="dpiReleaseDate_LostFocus"/>
         </DockPanel>
         <!--Cover-->
         <DockPanel Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2">
             <Label x:Name="lblCover" DockPanel.Dock="Left" Content="Album Cover" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Button x:Name="bntCover" DockPanel.Dock="Right" Width="100" IsEnabled="True"  HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Upload" Click="bntCover_Click"/>
+            <Button x:Name="bntCover"  TabIndex="5" DockPanel.Dock="Right" Width="100" IsEnabled="True"  HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Upload" Click="bntCover_Click"/>
         </DockPanel>
         <!--Own-->
         <DockPanel Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2">
             <Label x:Name="lblOwn" DockPanel.Dock="Left" Content="Own" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <CheckBox x:Name="ckbOwn" Width="100" IsEnabled="True" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+            <CheckBox x:Name="ckbOwn"  TabIndex="6" Width="100" IsEnabled="True" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ckbOwn_Click" />
         </DockPanel>
         <!--Price-->
         <DockPanel Grid.Row="5" Grid.Column="4"  Grid.ColumnSpan="2" >
             <Label  x:Name="lblPrice" DockPanel.Dock="Left" Content="Price" HorizontalAlignment="left" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <TextBox x:Name="txtPrice" DockPanel.Dock="Right" Width="100" IsEnabled="True"  BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" LostFocus="txtPrice_LostFocus"/>
+            <TextBox x:Name="txtPrice"  TabIndex="7" DockPanel.Dock="Right" Width="100" IsEnabled="True"  BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" LostFocus="txtPrice_LostFocus"/>
         </DockPanel>
 
-        <Button x:Name="btnSave" IsEnabled="False" Grid.Row="9" Grid.Column="3" Content="Save" Click="btnSave_Click"/>
-        <Button x:Name="btnReturn" Grid.Row="9" Grid.Column="5" Content="Return" Click="btnReturn_Click"/>
+        <Button x:Name="btnSave"  TabIndex="8" IsEnabled="False" Grid.Row="9" Grid.Column="3" Content="Save" Click="btnSave_Click"/>
+        <Button x:Name="btnReturn"  TabIndex="9" Grid.Row="9" Grid.Column="5" Content="Return" Click="btnReturn_Click"/>
 
     </Grid>
 </UserControl>

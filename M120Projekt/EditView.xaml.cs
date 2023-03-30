@@ -37,6 +37,7 @@ namespace M120Projekt
             CreateGenres();
             FillPage();
             update = false;
+            btnSave.Content = "Create";
         }
 
 
@@ -161,7 +162,7 @@ namespace M120Projekt
             txtArtist.Text = record.Artist;
             cmbGenres.SelectedValue = record.Genre;
             dpiReleaseDate.SelectedDate = record.ReleaseDate;
-            txtPrice.Text = record.Price.ToString();
+            txtPrice.Text = record.Price.ToString("F2");
             OwnPrint(record);
         }
         public void OwnPrint(Data.Record record)
@@ -195,7 +196,7 @@ namespace M120Projekt
         private void bntCover_DoubleClick(object sender, RoutedEventArgs e)
         {
             bntCover_Click(sender, e);
-
+            SetSaveButton();
 
 
 
@@ -269,6 +270,7 @@ namespace M120Projekt
             {
                 txtPrice.Background = Brushes.White;
                 txtPrice.Text = string.Empty;
+
             }
         }
         private void MarkGreen()
@@ -276,6 +278,11 @@ namespace M120Projekt
             txtAlbumTitle.Background = Brushes.LightGreen;
             txtArtist.Background= Brushes.LightGreen;
             txtPrice.Background= Brushes.LightGreen;
+        }
+
+        private void ckbOwn_Click(object sender, RoutedEventArgs e)
+        {
+            SetSaveButton();
         }
     }
 }

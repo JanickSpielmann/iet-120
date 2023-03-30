@@ -30,10 +30,10 @@
         <DataGrid.Columns>
             <DataGridTextColumn Binding="{Binding AlbumTitle}" Header="Title" Width="*"/>
             <DataGridTextColumn Binding="{Binding Artist}" Header="Artist" Width="*"/>
-            <DataGridTextColumn Binding="{Binding Genre}" Header="Genre" Width="*"/>
-            <DataGridTextColumn Binding="{Binding Price}" Header="Price" Width="*"/>
-            <DataGridTextColumn Binding="{Binding ReleaseDate, StringFormat=\{0:dd.MM.yyyy\} }" Header="Release Date" Width="*"/>
-            <DataGridCheckBoxColumn Binding="{Binding Own}" Header="Own" Width="*"/>
+            <DataGridTextColumn Binding="{Binding Genre}" Header="Genre" Width="Auto"/>
+            <DataGridTextColumn Binding="{Binding Price, StringFormat=F2}" Header="Price" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding ReleaseDate, StringFormat={}{0:dd.MM.yyyy}}" Header="Release Date" Width="Auto"/>
+            <DataGridCheckBoxColumn Binding="{Binding Own}" Header="Own" Width="Auto"/>
         </DataGrid.Columns>
     </DataGrid>
     <Button x:Name="btnCreate" Grid.Column="3" Grid.Row="2" Content="Create Entry" Click="btnCreate_Click"/>
